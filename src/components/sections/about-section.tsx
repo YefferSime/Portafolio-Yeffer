@@ -1,46 +1,82 @@
+"use client";
+
 export default function AboutSection() {
   const skills = [
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "Next.js",
-    "Tailwind CSS",
-    "Node.js",
-    "Kotlin",
-    "Jetpack Compose",
-    "Firebase",
-    "MySQL",
+    "Kotlin", "SwiftUI", "Laravel", "Django", 
+    "React", "Next.js", "TypeScript", "Jetpack Compose", 
+    "Room DB", "Firebase", "Figma", "Git"
+  ];
+
+  const pillars = [
+    { title: "Resiliencia", desc: "Serenidad y resolución bajo presión real.", color: "bg-rose-500/40" },
+    { title: "Autodidacta", desc: "Dominio de tecnologías en tiempo récord.", color: "bg-amber-400/40" },
+    { title: "Propósito", desc: "Facilitar la vida de quien usa el código.", color: "bg-emerald-400/40" },
+    { title: "Adaptabilidad", desc: "De eventos de élite a negocios locales.", color: "bg-blue-400/40" },
+    { title: "Optimización", desc: "Ahorro crítico de recursos (batería/datos).", color: "bg-purple-400/40" }
   ];
 
   return (
-    <section
-      id="about"
-      className="flex min-h-auto flex-col justify-center py-8 md:min-h-[calc(100vh-48px)] md:py-0"
-    >
-      <p className="mb-3 text-sm text-rose-200/80">• Sobre mí</p>
-      <h2 className="mb-5 text-3xl font-semibold md:text-5xl">Sobre mí</h2>
+    <section id="about" className="snap-start flex min-h-screen flex-col justify-center py-12 md:py-20">
+      <p className="mb-3 text-[10px] text-rose-200/40 uppercase tracking-[0.2em] font-bold">• Mi trayectoria</p>
+      <h2 className="mb-8 text-3xl font-semibold md:text-5xl tracking-tight text-white">Sobre mí</h2>
 
-      <p className="max-w-3xl text-base leading-8 text-zinc-400">
-        Soy desarrollador de software y me gusta construir productos visualmente
-        limpios, bien estructurados y con buenas prácticas.
-      </p>
+      {/* items-start es la clave aquí para que cada caja maneje su propia altura */}
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-12 items-start"> 
+        
+        {/* Lado Izquierdo: Tu historia */}
+        <div className="liquid-glass md:col-span-7 p-8 md:p-10 space-y-8">
+          <div className="space-y-6">
+            <p className="text-lg leading-8 text-zinc-200 font-light italic border-l border-rose-500/30 pl-5 bg-white/[0.01] py-3">
+              "Aprendo lo que sea necesario en una noche si eso significa que el proyecto será un éxito."
+            </p>
 
-      <p className="mt-4 max-w-3xl text-base leading-8 text-zinc-400">
-        Trabajo tanto en frontend web como en desarrollo móvil, y me interesa
-        mucho la experiencia de usuario y la arquitectura del proyecto.
-      </p>
+            <p className="text-base leading-8 text-zinc-400 font-light">
+              Vengo de un pueblo donde la tecnología era un sueño lejano. Esa realidad forjó mi carácter y me llevó a ser becario de Beca 18 en TECSUP, transformando la carencia en una curiosidad insaciable por resolver problemas complejos.
+            </p>
 
-      <h3 className="mt-7 mb-3 text-xl font-semibold">Habilidades</h3>
+            <p className="text-base leading-8 text-zinc-400 font-light">
+              He pasado de la teoría a la práctica extrema: desde diseñar en Figma hasta ser el soporte técnico en la línea de meta de eventos mundiales.
+            </p>
+          </div>
+          
+          <div className="pt-4 border-t border-white/5">
+             <h3 className="mb-5 text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Stack Tecnológico</h3>
+             <div className="flex flex-wrap gap-2">
+                {skills.map((skill) => (
+                  <span key={skill} className="px-3 py-1 text-[11px] font-medium text-zinc-300 bg-white/[0.03] border border-white/5 rounded-full transition-all hover:border-rose-500/20 hover:bg-white/[0.05]">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+          </div>
+        </div>
 
-      <div className="flex flex-wrap gap-3">
-        {skills.map((skill) => (
-          <span
-            key={skill}
-            className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm"
-          >
-            {skill}
-          </span>
-        ))}
+        {/* Lado Derecho: Contenedores con altura independiente */}
+        <div className="md:col-span-5 flex flex-col gap-6">
+          {/* Formación */}
+          <div className="liquid-glass p-6 border border-white/5">
+            <p className="text-[9px] uppercase tracking-widest text-rose-200/40 font-bold">Formación</p>
+            <h4 className="mt-2 font-medium text-white text-sm">Diseño y Desarrollo de Software</h4>
+            <p className="text-[11px] text-zinc-500 italic mt-1">TECSUP • Becario Beca 18</p>
+          </div>
+
+          {/* Mis Pilares - Altura dictada solo por el contenido */}
+          <div className="liquid-glass p-8 border border-white/5 h-auto"> 
+            <p className="text-[9px] uppercase tracking-widest text-zinc-600 font-bold mb-8">Mis Pilares</p>
+            <ul className="space-y-7"> 
+              {pillars.map((p) => (
+                <li key={p.title} className="flex items-start gap-4 group">
+                  <span className={`mt-1.5 h-1.5 w-1.5 rounded-full ${p.color} shrink-0 shadow-[0_0_10px_rgba(255,255,255,0.05)]`} />
+                  <div className="space-y-1">
+                    <span className="text-zinc-200 font-bold text-[10px] uppercase tracking-wider block leading-none">{p.title}</span>
+                    <p className="text-zinc-500 text-[11px] leading-relaxed font-light">{p.desc}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
       </div>
     </section>
   );

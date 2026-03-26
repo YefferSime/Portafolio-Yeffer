@@ -1,43 +1,54 @@
 "use client";
+import { HiOutlineBriefcase,HiOutlineHome, HiOutlineSquares2X2, HiOutlineUser, HiOutlineChatBubbleLeftRight } from "react-icons/hi2";
 
 const items = [
-  { id: "hero", label: "Inicio", icon: "⌂" },
-  { id: "projects", label: "Proyectos", icon: "▣" },
-  { id: "about", label: "Sobre mí", icon: "◉" },
-  { id: "contact", label: "Contacto", icon: "✉" },
+  { id: "hero", label: "Inicio", icon: <HiOutlineHome/> },
+  { id: "projects", label: "Proyectos", icon: <HiOutlineSquares2X2/> },
+  { id: "experience", label: "Experiencia", icon: <HiOutlineBriefcase/> },
+  {id: "about", label: "Sobre mí", icon: <HiOutlineUser/> },
+  { id: "contact", label: "Contacto", icon: <HiOutlineChatBubbleLeftRight/> },
 ];
 
-export default function RightNavbar() {
+export default function RightNavbar({ mobile = false }) {
   const handleScroll = (id: string) => {
-    const container = document.querySelector(".center-scroll");
     const target = document.getElementById(id);
+    if (!target) return;
 
-    if (!container || !target) return;
+    const container = document.querySelector(".center-scroll");
 
-    const containerElement = container as HTMLElement;
-    const containerRect = containerElement.getBoundingClientRect();
-    const targetRect = target.getBoundingClientRect();
+    if (container) {
+      // 💻 Desktop (scroll interno)
+      const containerElement = container as HTMLElement;
+      const containerRect = containerElement.getBoundingClientRect();
+      const targetRect = target.getBoundingClientRect();
 
-    const offsetTop =
-      targetRect.top - containerRect.top + containerElement.scrollTop;
+      const offsetTop =
+        targetRect.top - containerRect.top + containerElement.scrollTop;
 
-    containerElement.scrollTo({
-      top: offsetTop,
-      behavior: "smooth",
-    });
+      containerElement.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+    } else {
+      // 📱 Mobile (scroll global)
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
   };
 
   return (
-    <nav className="flex w-auto flex-row items-center justify-center gap-3 rounded-3xl border border-white/10 bg-black/5 p-3 shadow-[0_12px_30px_rgba(0,0,0,0.25)] backdrop-blur-xs md:w-[72px] md:flex-col md:py-4 md:px-2">
+    <nav className={`liquid-glass flex gap-3 p-3 ${mobile ? "flex-row justify-between w-full mx-4" : "md:flex-col md:w-[72px]"}`}>
       {items.map((item) => (
         <button
-          key={item.id}
+          key = {item.id}
           onClick={() => handleScroll(item.id)}
-          className="grid h-12 w-12 place-items-center rounded-2xl border border-white/10 bg-white/5 text-white transition hover:-translate-y-0.5 hover:border-red-500/70 hover:shadow-[0_0_18px_rgba(220,38,38,0.2)]"
-          aria-label={item.label}
-          title={item.label}
+          className="group relative overflow-hidden grid h-14 w-14 md:h-12 md:w-12 place-items-center rounded-2xl border border-white/15 bg-white/10 text-white backdrop-blur-xl transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-white/20 hover:border-white/30 hover:shadow-[0_8px_30px_rgba(255,255,255,0.15)] active:scale-95 active:translate-y-0 active:shadow-[inset_0_2px_6px_rgba(0,0,0,0.4)]"
         >
-          <span>{item.icon}</span>
+          <span className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none bg-gradient-to-br from-white/40 via-white/10 to-transparent" />
+
+          <span className="relative z-10">{item.icon}</span>
         </button>
       ))}
     </nav>
