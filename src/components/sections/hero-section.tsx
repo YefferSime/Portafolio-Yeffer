@@ -39,7 +39,7 @@ export default function HeroSection() {
 
 
             <div className="mt-8 flex flex-wrap gap-2 max-w-xl">
-                {["Kotlin", "SwiftUI", "Next.js", "TypeScript",
+                {["Kotlin", "SwiftUI","MVVM", "Next.js", "TypeScript",
                     "Laravel", "Django", "Firebase", "PostgreSQL", "Git"].map((tech) => (
                         <span
                             key={tech}
