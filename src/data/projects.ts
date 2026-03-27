@@ -37,6 +37,10 @@ export const projects: Project[] = [
         src: "/image/apps/finisherdata/app_finisherdata.png",
         label: "Android",
       },
+       {
+        src: "/image/apps/finisherdata/ios_finisherdata.webp",
+        label: "iOS",
+      },
       {
         src: "/image/apps/finisherdata/web_phone_finisherdata.webp",
         label: "Web móvil",
@@ -122,17 +126,13 @@ export const projects: Project[] = [
     technologies: ["Next.js", "TypeScript", "Tailwind", "Kotlin", "Jetpack Compose", "Firebase"],
     images: [
       {
-        src: "/image/apps/peruaquatics/app_peruaquatics.png",
+        src: "/image/apps/peruaquatics/app_peruaquatics_1.webp",
         label: "Android",
       },
       {
-        src: "/image/apps/peruaquatics/web_peruaquatics.webp",
-        label: "Web laptop",
-      },
-      {
-        src: "/image/apps/peruaquatics/web_phone_peruaquatics.webp",
-        label: "Web móvil",
-      },
+        src: "/image/apps/peruaquatics/app_peruaquatics_2.webp",
+        label: "Android",
+      }
     ],
     links: [
         {
@@ -180,10 +180,7 @@ export const projects: Project[] = [
         label: "Sitio Web",
         url: "https://nailswithlili.com", // O el link correspondiente
       },
-      {
-        label: "Diseño en Figma",
-        url: "#", // Puedes poner un link a tu prototipo de Figma si es público
-      },
+      
     ],
   },
   {

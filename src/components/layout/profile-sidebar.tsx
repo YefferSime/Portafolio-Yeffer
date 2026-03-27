@@ -3,9 +3,13 @@ import { FaGithub, FaLinkedin, FaFacebook, FaWhatsapp } from "react-icons/fa";
 export default function ProfileSidebar() {
     return (
         <div className="flex h-full flex-col justify-between gap-5  p-5  liquid-glass">
-            <button className="liquid-glass h-14 place-items-center  over:-translate-y-0.5 duration-300 ease-out hover:bg-white/20 hover:border-white/30 hover:shadow-[0_8px_30px_rgba(255,255,255,0.15)] active:scale-95 active:translate-y-0 active:shadow-[inset_0_2px_6px_rgba(0,0,0,0.4)]"
-                >   Descargar CV
-            </button>
+           <a 
+                href="cv/YEFFER_SIME_CV.pdf" 
+                download="CV_Yeffer_Sime.pdf"
+                className="liquid-glass flex h-14 items-center justify-center text-sm font-bold tracking-wide text-white border border-white/5 rounded-2xl transition-all hover:bg-white/10 hover:text-white active:scale-95"
+            >   
+                Descargar CV
+            </a>
 
             <div className="overflow-hidden rounded-3xl border border-white/10">
                 <img
@@ -24,38 +28,35 @@ export default function ProfileSidebar() {
 
             <div className="flex flex-wrap gap-3 justify-center">
                 <a
-                    href="#"
+                   href="https://github.com/YefferSime" 
+                    target="_blank"
                     aria-label="GitHub"
-                    className="liquid-glass grid h-10 w-10 place-items-center  over:-translate-y-0.5 duration-300 ease-out hover:bg-white/20 hover:border-white/30 hover:shadow-[0_8px_30px_rgba(255,255,255,0.15)] active:scale-95 active:translate-y-0 active:shadow-[inset_0_2px_6px_rgba(0,0,0,0.4)]"
+                    className="liquid-glass grid h-10 w-10 place-items-center  hover:-translate-y-0.5 duration-300 ease-out hover:bg-white/20 hover:border-white/30 hover:shadow-[0_8px_30px_rgba(255,255,255,0.15)] active:scale-95 active:translate-y-0 active:shadow-[inset_0_2px_6px_rgba(0,0,0,0.4)]"
                 >
                     <FaGithub />
                 </a>
                 <a
-                    href="#"
+                    href="https://www.linkedin.com/in/yeffersimehuarancca/"
+                     target="_blank"
                     aria-label="LinkedIn"
-                    className="liquid-glass grid h-10 w-10 place-items-center  over:-translate-y-0.5 duration-300 ease-out hover:bg-white/20 hover:border-white/30 hover:shadow-[0_8px_30px_rgba(255,255,255,0.15)] active:scale-95 active:translate-y-0 active:shadow-[inset_0_2px_6px_rgba(0,0,0,0.4)]"
+                    className="liquid-glass grid h-10 w-10 place-items-center  hover:-translate-y-0.5 duration-300 ease-out hover:bg-white/20 hover:border-white/30 hover:shadow-[0_8px_30px_rgba(255,255,255,0.15)] active:scale-95 active:translate-y-0 active:shadow-[inset_0_2px_6px_rgba(0,0,0,0.4)]"
                 >
 
                     <FaLinkedin />
                 </a>
               
+                
                 <a
-                    href="#"
-                    aria-label="Facebook"
-                   className="liquid-glass grid h-10 w-10 place-items-center  over:-translate-y-0.5 duration-300 ease-out hover:bg-white/20 hover:border-white/30 hover:shadow-[0_8px_30px_rgba(255,255,255,0.15)] active:scale-95 active:translate-y-0 active:shadow-[inset_0_2px_6px_rgba(0,0,0,0.4)]"
-                >
-                    <FaFacebook />
-                </a>
-                <a
-                    href="#"
+                    href="https://wa.link/fcswny"
+                     target="_blank"
                     aria-label="Whatsapp"
-                   className="liquid-glass grid h-10 w-10 place-items-center  over:-translate-y-0.5 duration-300 ease-out hover:bg-white/20 hover:border-white/30 hover:shadow-[0_8px_30px_rgba(255,255,255,0.15)] active:scale-95 active:translate-y-0 active:shadow-[inset_0_2px_6px_rgba(0,0,0,0.4)]"
+                   className="liquid-glass grid h-10 w-10 place-items-center  hover:-translate-y-0.5 duration-300 ease-out hover:bg-white/20 hover:border-white/30 hover:shadow-[0_8px_30px_rgba(255,255,255,0.15)] active:scale-95 active:translate-y-0 active:shadow-[inset_0_2px_6px_rgba(0,0,0,0.4)]"
                 >
                     <FaWhatsapp />
                 </a>
             </div>
 
-            <button className="liquid-glass py-4 hover:-translate-y-0.5 duration-300 ease-out hover:bg-white/20 hover:border-white/30 hover:shadow-[0_8px_30px_rgba(255,255,255,0.15)] active:scale-95 active:translate-y-0 active:shadow-[inset_0_2px_6px_rgba(0,0,0,0.4)]">
+            <button className="liquid-glass font-bold py-4 hover:-translate-y-0.5 duration-300 ease-out hover:bg-white/20 hover:border-white/30 hover:shadow-[0_8px_30px_rgba(255,255,255,0.15)] active:scale-95 active:translate-y-0 active:shadow-[inset_0_2px_6px_rgba(0,0,0,0.4)]">
                 Trabajemos juntos
             </button>
         </div>

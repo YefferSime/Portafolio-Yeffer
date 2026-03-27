@@ -17,13 +17,10 @@ export default function AboutSection() {
 
   return (
     <section id="about" className="snap-start flex min-h-screen flex-col justify-center py-12 md:py-20">
-      <p className="mb-3 text-[10px] text-rose-200/40 uppercase tracking-[0.2em] font-bold">• Mi trayectoria</p>
+      <p className="mb-3 text-[10px] text-rose-200/40 uppercase tracking-[0.2em] font-bold">• Perfil</p>
       <h2 className="mb-8 text-3xl font-semibold md:text-5xl tracking-tight text-white">Sobre mí</h2>
-
-      {/* items-start es la clave aquí para que cada caja maneje su propia altura */}
       <div className="grid grid-cols-1 gap-6 md:grid-cols-12 items-start"> 
         
-        {/* Lado Izquierdo: Tu historia */}
         <div className="liquid-glass md:col-span-7 p-8 md:p-10 space-y-8">
           <div className="space-y-6">
             <p className="text-lg leading-8 text-zinc-200 font-light italic border-l border-rose-500/30 pl-5 bg-white/[0.01] py-3">
@@ -43,7 +40,7 @@ export default function AboutSection() {
              <h3 className="mb-5 text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Stack Tecnológico</h3>
              <div className="flex flex-wrap gap-2">
                 {skills.map((skill) => (
-                  <span key={skill} className="px-3 py-1 text-[11px] font-medium text-zinc-300 bg-white/[0.03] border border-white/5 rounded-full transition-all hover:border-rose-500/20 hover:bg-white/[0.05]">
+                  <span key={skill} className=" liquid-glass px-3 py-1 text-sm font-medium text-zinc-300 ">
                     {skill}
                   </span>
                 ))}
@@ -51,16 +48,14 @@ export default function AboutSection() {
           </div>
         </div>
 
-        {/* Lado Derecho: Contenedores con altura independiente */}
+        
         <div className="md:col-span-5 flex flex-col gap-6">
-          {/* Formación */}
+         
           <div className="liquid-glass p-6 border border-white/5">
             <p className="text-[9px] uppercase tracking-widest text-rose-200/40 font-bold">Formación</p>
             <h4 className="mt-2 font-medium text-white text-sm">Diseño y Desarrollo de Software</h4>
             <p className="text-[11px] text-zinc-500 italic mt-1">TECSUP • Becario Beca 18</p>
           </div>
-
-          {/* Mis Pilares - Altura dictada solo por el contenido */}
           <div className="liquid-glass p-8 border border-white/5 h-auto"> 
             <p className="text-[9px] uppercase tracking-widest text-zinc-600 font-bold mb-8">Mis Pilares</p>
             <ul className="space-y-7"> 

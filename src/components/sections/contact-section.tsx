@@ -13,7 +13,7 @@ export default function ContactSection() {
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-12">
         
-        {/* Columna de Texto - Minimalista */}
+      
         <div className="liquid-glass md:col-span-7 flex flex-col justify-center p-8 space-y-6">
           <p className="text-lg leading-8 text-zinc-200 font-light">
             Ya sea para un proyecto deportivo de alto rendimiento o una vacante en tu equipo, estoy listo para aportar mi experiencia y resiliencia.
@@ -25,7 +25,9 @@ export default function ContactSection() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
             <a 
-              href="mailto:yeffer.sime@gmail.com"
+             href="https://mail.google.com/mail/?view=cm&fs=1&to=yeffer.sime@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
               className="group flex items-center gap-4 p-4 transition-all hover:bg-white/[0.03] border border-white/5 rounded-2xl"
             >
               <div className="rounded-xl bg-white/5 p-3 text-zinc-400 group-hover:text-white transition-colors">
@@ -89,12 +91,12 @@ export default function ContactSection() {
               </a>
             </div>
 
-            <button 
-              onClick={() => window.location.href = 'mailto:yeffer.sime@gmail.com'}
-              className="mt-6 w-full rounded-2xl bg-white text-black py-4 font-bold text-sm transition-transform active:scale-[0.98] hover:bg-zinc-200 shadow-[0_0_20px_rgba(255,255,255,0.1)]"
+            <a 
+             href="https://wa.link/fcswny"
+              className="liquid-glass mt-6 w-full text-center  p-4 font-bold text-sm  hover:-translate-y-0.5 duration-300 ease-out hover:bg-white/20 hover:border-white/30 hover:shadow-[0_8px_30px_rgba(255,255,255,0.15)] active:scale-95 active:translate-y-0 active:shadow-[inset_0_2px_6px_rgba(0,0,0,0.4)]"
             >
               Enviar Mensaje Directo
-            </button>
+            </a>
           </div>
 
           <div className="liquid-glass p-4 flex items-center justify-center gap-2 text-zinc-600 border border-white/5">

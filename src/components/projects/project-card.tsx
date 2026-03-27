@@ -32,7 +32,7 @@ export default function ProjectCard({ project }: Props) {
             {project.technologies.map((tech) => (
               <span
                 key={tech}
-                className="liquid-glass  px-4 py-2 text-sm md:text-base"
+                className=" liquid-glass px-4 py-2 text-sm md:text-basetransition-all hover:bg-white/[0.03] border border-white/5 rounded-2xl"
               >
                 {tech}
               </span>

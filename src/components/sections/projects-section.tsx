@@ -27,7 +27,7 @@ export default function ProjectsSection() {
       className="snap-start flex min-h-screen flex-col justify-center py-8 md:min-h-[calc(100vh-48px)] md:py-0"
     >
       <div className="mx-auto w-full max-w-[1280px]">
-        <p className="mb-3 text-sm text-rose-200/80">• proyectos</p>
+        <p className="mb-4 text-[10px] text-zinc-500 uppercase tracking-[0.3em] font-bold">• proyectos</p>
 
         <h2 className="mb-8 text-4xl font-semibold md:text-5xl xl:text-6xl">
           Mis proyectos
