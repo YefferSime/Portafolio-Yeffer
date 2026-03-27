@@ -34,7 +34,7 @@ export const projects: Project[] = [
     technologies: ["Kotlin", "Jetpack Compose", "SwiftUI", "Firebase", "HLS Video", "Lottie"],
     images: [
       {
-        src: "/image/apps/finisherdata/app_finisherdata.png",
+        src: "/image/apps/finisherdata/app_finisherdata.webp",
         label: "Android",
       },
        {
