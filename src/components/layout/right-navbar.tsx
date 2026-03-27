@@ -41,7 +41,7 @@ export default function RightNavbar({ mobile = false }) {
 
       <nav className={`liquid-glass flex z-50 transition-all ${
         mobile 
-          ? "flex-row justify-around w-[92%] max-w-[500px] p-3 mb-4 rounded-[2.5rem] border border-white/10" 
+          ? "flex-row justify-around w-[92%] max-w-[500px] p-3 mb-1 rounded-[2.5rem] border border-white/10" 
           : "md:flex-col md:w-[72px] gap-3 p-3"
       }`}>
         {items.map((item) => (
