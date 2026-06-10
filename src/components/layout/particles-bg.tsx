@@ -22,10 +22,10 @@ export default function ParticlesBg() {
       fpsLimit: 120,
       particles: {
         number: {
-          value: 70,
+          value:40,
           density: { enable: true },
         },
-        color: { value: "#9e2a2b" },
+        color: { value: "#575551" },
         links: {
           enable: true,
           distance: 10,
@@ -64,7 +64,7 @@ export default function ParticlesBg() {
             },
           },
           push: {
-            quantity: 8,
+            quantity: 3,
           },
         },
       },
