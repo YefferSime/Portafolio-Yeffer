@@ -93,7 +93,7 @@ export default function ContactSection() {
 
             <a 
              href="https://wa.link/fcswny"
-              className="liquid-glass mt-6 w-full text-center  p-4 font-bold text-sm  hover:-translate-y-0.5 duration-300 ease-out hover:bg-white/20 hover:border-white/30 hover:shadow-[0_8px_30px_rgba(255,255,255,0.15)] active:scale-95 active:translate-y-0 active:shadow-[inset_0_2px_6px_rgba(0,0,0,0.4)]"
+              className="liquid-glass mt-6 w-full text-center p-4 font-bold text-sm transition-colors duration-200 hover:bg-white/20 hover:border-white/25 active:scale-95"
             >
               Enviar Mensaje Directo
             </a>
