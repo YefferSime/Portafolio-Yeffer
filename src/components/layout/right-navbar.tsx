@@ -32,11 +32,18 @@ export default function RightNavbar({ mobile = false }) {
       )}
 
       <nav
-        className={`liquid-glass flex z-50 transition-all ${
+        className={`flex z-50 transition-all ${
           mobile
-            ? "flex-row justify-around w-[92%] max-w-125 p-3 mb-1 rounded-[2.5rem] border border-white/10"
-            : "md:flex-col md:w-18 gap-3 p-3"
+            ? "flex-row justify-around w-[92%] max-w-125 p-3 mb-1 rounded-4xl"
+            : "liquid-glass md:flex-col md:w-18 gap-3 p-3"
         }`}
+        style={mobile ? {
+          background: "rgba(11,9,11,0.72)",
+          backdropFilter: "blur(22px)",
+          WebkitBackdropFilter: "blur(22px)",
+          border: "1px solid rgba(255,255,255,0.16)",
+          boxShadow: "0 8px 32px rgba(0,0,0,0.42), inset 0 0 0 1px rgba(255,255,255,0.08)",
+        } : undefined}
       >
         {items.map((item) => (
           <button
