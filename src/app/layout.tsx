@@ -1,5 +1,11 @@
 import "./globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { Outfit } from "next/font/google";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -30,6 +36,7 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true },
   },
+  metadataBase: new URL("https://yeffer-sime.vercel.app"),
   openGraph: {
     type: "website",
     locale: "es_PE",
@@ -37,15 +44,20 @@ export const metadata: Metadata = {
     description:
       "Desarrollador Mobile y Full Stack con experiencia en Kotlin, SwiftUI, Next.js y Laravel. Proyectos en producción en 4+ países.",
     siteName: "Yeffer Sime H. — Portafolio",
+    // Replace with a 1200×630 banner image when available:
     images: [{ url: "/image/profile2.png", width: 400, height: 400, alt: "Yeffer Sime H." }],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Yeffer Sime H. | Mobile & Full Stack Developer",
     description:
       "Desarrollador Mobile y Full Stack con experiencia en Kotlin, SwiftUI, Next.js y Laravel.",
     images: ["/image/profile2.png"],
   },
+};
+
+export const viewport: Viewport = {
+  viewportFit: "cover",
 };
 
 export default function RootLayout({
@@ -55,7 +67,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body className={outfit.variable}>{children}</body>
     </html>
   );
 }

@@ -26,7 +26,7 @@ export default function PortfolioShell() {
                 </div>
             </section>
 
-            <div className="fixed bottom-6 left-0 right-0 z-50 flex justify-center lg:hidden">
+            <div className="fixed left-0 right-0 z-50 flex justify-center lg:hidden" style={{ bottom: "calc(1.5rem + env(safe-area-inset-bottom, 0px))" }}>
                 <RightNavbar mobile />
             </div>
         </main>

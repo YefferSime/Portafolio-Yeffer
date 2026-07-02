@@ -4,7 +4,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: var(--font-outfit), sans-serif;
 }
 
 
@@ -51,8 +51,47 @@ body {
   display: none;
 }
 
-.center-scroll .snap-start {
-  scroll-margin-top: 88px;
+@media (min-width: 1024px) {
+  .center-scroll .snap-start {
+    scroll-margin-top: 88px;
+  }
+}
+
+/* ── Focus visible ── */
+:focus-visible {
+  outline: 2px solid rgba(177, 36, 47, 0.85);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* ── Entrance animations ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: marquee 28s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @keyframes blink {

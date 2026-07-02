@@ -1,6 +1,7 @@
 "use client";
 
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { useActiveSection } from "@/hooks/useActiveSection";
 
 const navLinks = [
   { href: "hero",       label: "Inicio" },
@@ -10,9 +11,12 @@ const navLinks = [
   { href: "contact",    label: "Contacto" },
 ];
 
+const SECTION_IDS = navLinks.map((l) => l.href);
 const accent = "#b1242f";
 
 export default function TopNavbar() {
+  const activeSection = useActiveSection(SECTION_IDS);
+
   const scrollTo = (id: string) => {
     const target = document.getElementById(id);
     if (!target) return;
@@ -84,16 +88,30 @@ export default function TopNavbar() {
           </button>
 
           {/* Nav links */}
-          <nav className="hidden md:flex items-center gap-0.5 ml-auto">
-            {navLinks.map((l) => (
-              <button
-                key={l.href}
-                onClick={() => scrollTo(l.href)}
-                className="px-3.75 py-2.25 rounded-[11px] text-[13.5px] font-medium text-zinc-300 whitespace-nowrap transition-colors duration-200 hover:bg-white/8 hover:text-white"
-              >
-                {l.label}
-              </button>
-            ))}
+          <nav className="hidden md:flex items-center gap-0.5 ml-auto" aria-label="Navegación principal">
+            {navLinks.map((l) => {
+              const isActive = activeSection === l.href;
+              return (
+                <button
+                  key={l.href}
+                  onClick={() => scrollTo(l.href)}
+                  aria-current={isActive ? "page" : undefined}
+                  className={`relative px-3.75 py-2.25 rounded-[11px] text-[13.5px] font-medium whitespace-nowrap transition-colors duration-200 ${
+                    isActive
+                      ? "text-white bg-white/8"
+                      : "text-zinc-300 hover:bg-white/8 hover:text-white"
+                  }`}
+                >
+                  {l.label}
+                  {isActive && (
+                    <span
+                      className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full"
+                      style={{ background: accent }}
+                    />
+                  )}
+                </button>
+              );
+            })}
           </nav>
 
           {/* Divider */}

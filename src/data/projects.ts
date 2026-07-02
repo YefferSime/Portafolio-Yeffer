@@ -11,6 +11,8 @@ export type ProjectLink = {
 export type Project = {
   id: string;
   title: string;
+  /** Ruta al logo de marca (ej. `/image/webs/{id}/{id}Logo.webp`). Si no existe, la card usa una captura de pantalla como fallback. */
+  logo?: string;
   description: string;
   bullets: string[];
   technologies: string[];
@@ -22,6 +24,7 @@ export const projects: Project[] = [
   {
     id: "finisherdata",
     title: "Finisher Data",
+    logo: "/image/apps/finisherdata/finisherdataLogo.webp",
     description:
       "Plataforma principal de consulta para atletas, diseñada para entregar resultados inmediatos, certificados y videos de llegada en eventos de alta concurrencia.",
     bullets: [
@@ -48,6 +51,7 @@ export const projects: Project[] = [
   {
     id: "exotimer",
     title: "Exotimer",
+    logo: "/image/apps/exotimer/exotimerLogo.webp",
     description:
       "Sistema crítico de cronometraje profesional con validación en eventos internacionales de élite, diseñado para máxima fiabilidad en condiciones extremas.",
     bullets: [
@@ -71,6 +75,7 @@ export const projects: Project[] = [
   {
     id: "peruaquatics",
     title: "Peruaquatics",
+    logo: "/image/apps/peruaquatics/peruaquaticsLogo.webp",
     description:
       "Aplicación oficial de la Federación Deportiva Nacional de Natación (FDPN) para la gestión de atletas federados, récords y resultados de competiciones.",
     bullets: [
@@ -93,6 +98,7 @@ export const projects: Project[] = [
   {
     id: "nails-with-lili",
     title: "Nails with Lili",
+    logo: "/image/webs/nailswithlili/nailswithliliLogo.webp",
     description:
       "Landing page de alta conversión diseñada para un negocio de estética en EE. UU., enfocada en la reserva de citas y presencia digital.",
     bullets: [
@@ -112,24 +118,25 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "barber-super-mario",
-    title: "Barber Super Mario",
-    description:
-      "Plataforma web profesional desarrollada a medida para una barbería en EE. UU., enfocada en el posicionamiento de marca y conversión de citas.",
-    bullets: [
-      "Desarrollé la arquitectura del sitio utilizando PHP y Laravel, garantizando escalabilidad y limpieza en el código.",
-      "Implementé una interfaz 100% responsive mediante CSS puro, optimizada para la navegación desde smartphones.",
-      "Integré un flujo de conversión directa hacia Booksy, facilitando la reserva de turnos en tiempo real para clientes en EE. UU.",
-      "Optimicé la jerarquía visual y la UX para mejorar la retención de usuarios y el posicionamiento del negocio.",
-    ],
-    technologies: ["PHP", "Laravel", "CSS3", "Blade", "Apache"],
-    images: [
-      { src: "/image/webs/barbersupermario/web_laptop_barbersupermario.webp", label: "Web laptop" },
-      { src: "/image/webs/barbersupermario/web_tablet_barbersupermario.webp", label: "Web tablet" },
-      { src: "/image/webs/barbersupermario/web_phone_barbersupermario.webp", label: "Web móvil" },
-    ],
-    links: [
-      { label: "Sitio Web", url: "https://barbersupermario.com" },
-    ],
-  },
+  id: "barber-super-mario",
+  title: "Barber Super Mario",
+  logo: "/image/webs/barbersupermario/barbersupermarioLogo.webp",
+  description:
+    "Plataforma web full stack desarrollada a medida para una barbería en Arlington, Virginia (EE. UU.), con landing page pública y panel de administración privado que permite al barbero gestionar todo su contenido de forma autónoma.",
+  bullets: [
+    "Diseñé e implementé una arquitectura full stack desacoplada: frontend SPA en React 19 + Vite desplegado en Vercel, y REST API en Node.js + Express con MySQL 8 desplegada en Railway.",
+    "Desarrollé un panel de administración completo con CRUD de servicios, galería de fotos/videos, moderación de reseñas y edición de datos de contacto, protegido con autenticación JWT y rate limiting por IP.",
+    "Integré Cloudinary para almacenamiento y entrega CDN de imágenes y videos, con subida via stream (sin escritura en disco) y limpieza automática de archivos huérfanos.",
+    "Implementé una estrategia SEO orientada al mercado estadounidense: Schema.org HairSalon, Open Graph, sitemap.xml, geo tags para Arlington VA y lazy loading por ruta para optimizar el LCP.",
+  ],
+  technologies: ["React 19", "Node.js", "Express", "MySQL", "Cloudinary", "JWT", "Vite", "TailwindCSS", "Vercel", "Railway"],
+  images: [
+    { src: "/image/webs/barbersupermario/web_laptop_barbersupermario.webp", label: "Web laptop" },
+    { src: "/image/webs/barbersupermario/web_tablet_barbersupermario.webp", label: "Web tablet" },
+    { src: "/image/webs/barbersupermario/web_phone_barbersupermario.webp", label: "Web móvil" },
+  ],
+  links: [
+    { label: "Sitio Web", url: "https://barbersupermario.com" },
+  ],
+},
 ];

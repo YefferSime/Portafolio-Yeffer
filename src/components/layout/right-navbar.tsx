@@ -1,15 +1,21 @@
 "use client";
 import { HiOutlineBriefcase, HiOutlineHome, HiOutlineSquares2X2, HiOutlineUser, HiOutlineChatBubbleLeftRight } from "react-icons/hi2";
+import { useActiveSection } from "@/hooks/useActiveSection";
 
 const items = [
-  { id: "hero",       label: "Inicio",      icon: <HiOutlineHome /> },
-  { id: "projects",  label: "Proyectos",   icon: <HiOutlineSquares2X2 /> },
-  { id: "experience",label: "Experiencia", icon: <HiOutlineBriefcase /> },
-  { id: "about",     label: "Sobre mí",    icon: <HiOutlineUser /> },
-  { id: "contact",   label: "Contacto",    icon: <HiOutlineChatBubbleLeftRight /> },
+  { id: "hero",        label: "Inicio",      icon: <HiOutlineHome /> },
+  { id: "projects",   label: "Proyectos",   icon: <HiOutlineSquares2X2 /> },
+  { id: "experience", label: "Experiencia", icon: <HiOutlineBriefcase /> },
+  { id: "about",      label: "Sobre mí",    icon: <HiOutlineUser /> },
+  { id: "contact",    label: "Contacto",    icon: <HiOutlineChatBubbleLeftRight /> },
 ];
 
+const SECTION_IDS = items.map((i) => i.id);
+const ACCENT = "#b1242f";
+
 export default function RightNavbar({ mobile = false }) {
+  const activeSection = useActiveSection(SECTION_IDS);
+
   const handleScroll = (id: string) => {
     const target = document.getElementById(id);
     if (!target) return;
@@ -32,6 +38,7 @@ export default function RightNavbar({ mobile = false }) {
       )}
 
       <nav
+        aria-label="Navegación móvil"
         className={`flex z-50 transition-all ${
           mobile
             ? "flex-row justify-around w-[92%] max-w-125 p-3 mb-1 rounded-4xl"
@@ -43,18 +50,34 @@ export default function RightNavbar({ mobile = false }) {
           WebkitBackdropFilter: "blur(22px)",
           border: "1px solid rgba(255,255,255,0.16)",
           boxShadow: "0 8px 32px rgba(0,0,0,0.42), inset 0 0 0 1px rgba(255,255,255,0.08)",
+          paddingBottom: `calc(0.75rem + env(safe-area-inset-bottom, 0px))`,
         } : undefined}
       >
-        {items.map((item) => (
-          <button
-            key={item.id}
-            onClick={() => handleScroll(item.id)}
-            className="group relative overflow-hidden grid h-14 w-14 md:h-12 md:w-12 place-items-center rounded-2xl border border-white/15 bg-white/10 text-white transition-colors duration-200 hover:bg-white/20 hover:border-white/25 active:scale-95"
-          >
-            <span className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-200 group-hover:opacity-100 pointer-events-none bg-linear-to-br from-white/20 via-white/5 to-transparent" />
-            <span className="relative z-10">{item.icon}</span>
-          </button>
-        ))}
+        {items.map((item) => {
+          const isActive = activeSection === item.id;
+          return (
+            <button
+              key={item.id}
+              onClick={() => handleScroll(item.id)}
+              aria-label={item.label}
+              aria-current={isActive ? "page" : undefined}
+              className={`group relative overflow-hidden grid h-14 w-14 md:h-12 md:w-12 place-items-center rounded-2xl border transition-colors duration-200 active:scale-95 ${
+                isActive
+                  ? "bg-white/20 border-white/30 text-white"
+                  : "border-white/15 bg-white/10 text-white hover:bg-white/20 hover:border-white/25"
+              }`}
+            >
+              {isActive && (
+                <span
+                  className="absolute top-1.5 right-1.5 w-1.5 h-1.5 rounded-full z-20"
+                  style={{ background: ACCENT, boxShadow: `0 0 6px ${ACCENT}` }}
+                />
+              )}
+              <span className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-200 group-hover:opacity-100 pointer-events-none bg-linear-to-br from-white/20 via-white/5 to-transparent" />
+              <span className="relative z-10">{item.icon}</span>
+            </button>
+          );
+        })}
       </nav>
     </>
   );

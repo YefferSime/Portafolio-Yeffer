@@ -1,40 +1,17 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import type { ProjectImageItem } from "@/data/projects";
+import { getVisualWidthClass } from "./project-utils";
 
 type Props = {
   images: ProjectImageItem[];
   title: string;
 };
 
-const getVisualWidthClass = (label: string) => {
-  switch (label) {
-    case "Android":
-    case "Web móvil":
-      return "max-w-[210px] sm:max-w-[230px] md:max-w-[250px]";
-
-    case "Web tablet":
-      return "max-w-[280px] sm:max-w-[320px] md:max-w-[360px]";
-
-    case "Web laptop":
-      return "max-w-[360px] sm:max-w-[420px] md:max-w-[500px] xl:max-w-[560px]";
-
-    case "iOS":
-      return "max-w-[210px] sm:max-w-[230px] md:max-w-[250px]";
-
-    default:
-      return "max-w-[240px] sm:max-w-[260px] md:max-w-[300px]";
-  }
-};
-
 export default function ProjectImageCarousel({ images, title }: Props) {
   const safeImages = useMemo(() => images ?? [], [images]);
   const [current, setCurrent] = useState(0);
-
-  useEffect(() => {
-    setCurrent(0);
-  }, [title, safeImages.length]);
 
   if (safeImages.length === 0) {
     return (
