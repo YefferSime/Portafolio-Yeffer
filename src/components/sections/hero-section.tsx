@@ -4,6 +4,7 @@ import { memo } from "react";
 import { HiOutlineArrowDownTray } from "react-icons/hi2";
 import { useTypewriter } from "@/hooks/useTypewriter";
 import { useInView } from "@/hooks/useInView";
+import HeroProfileCard from "./hero-profile-card";
 
 const ACCENT = "#b1242f";
 const TECHS = ["Kotlin", "SwiftUI", "MVVM", "Next.js", "TypeScript", "Laravel", "Django", "Firebase", "PostgreSQL", "Git"];
@@ -15,7 +16,7 @@ const TypewriterH1 = memo(function TypewriterH1() {
     1500
   );
   return (
-    <h1 className="mb-6 text-4xl font-bold tracking-tight text-white md:text-7xl h-[1.2em] flex items-center">
+    <h1 className="mb-6 whitespace-nowrap text-4xl font-bold tracking-tight text-white md:text-7xl lg:text-6xl h-[1.2em] flex items-center">
       {text}
       <span className="ml-1 inline-block w-0.75 h-[0.9em] bg-white animate-pulse" />
     </h1>
@@ -30,7 +31,11 @@ export default function HeroSection() {
       id="hero"
       className="snap-start flex min-h-screen flex-col justify-center py-10 md:py-0"
     >
-      <div ref={ref} className={`reveal${inView ? " visible" : ""}`}>
+      <div
+        ref={ref}
+        className={`reveal${inView ? " visible" : ""} lg:grid lg:grid-cols-[minmax(0,1fr)_300px] lg:items-center lg:gap-12`}
+      >
+        <div>
         <p className="mb-4 text-[10px] text-zinc-500 uppercase tracking-[0.3em] font-bold">• Yeffer Sime</p>
 
         <TypewriterH1 />
@@ -58,7 +63,7 @@ export default function HeroSection() {
             className="w-1.5 h-1.5 rounded-full"
             style={{ background: ACCENT, boxShadow: `0 0 8px ${ACCENT}` }}
           />
-          <span className="text-xs text-zinc-500">Disponible para proyectos globales</span>
+          <span className="text-xs text-zinc-500">Disponible remoto para Latinoamérica y España</span>
         </div>
 
         {/* Tech tags — marquee */}
@@ -101,6 +106,11 @@ export default function HeroSection() {
             <p className="text-[10px] text-zinc-500 mt-1 font-light italic">Proyectos en 4+ países</p>
           </div>
         </div>
+      </div>
+
+      <div className="mt-12 lg:mt-0" style={{ transitionDelay: "160ms" }}>
+        <HeroProfileCard />
+      </div>
       </div>
     </section>
   );

@@ -7,17 +7,26 @@ const outfit = Outfit({
   variable: "--font-outfit",
 });
 
+const SITE_URL = "https://yeffer-sime.vercel.app";
+
 export const metadata: Metadata = {
   title: {
-    default: "Yeffer Sime H. | Mobile & Full Stack Developer",
+    default: "Yeffer Sime H. | Desarrollador Mobile & Full Stack (Remoto LatAm/España)",
     template: "%s | Yeffer Sime H.",
   },
   description:
-    "Desarrollador Mobile y Full Stack con experiencia en Kotlin, SwiftUI, Next.js, Laravel y Django. Proyectos en producción en 4+ países, incluyendo apps para eventos deportivos internacionales.",
+    "Desarrollador Mobile y Full Stack peruano, disponible remoto para Latinoamérica y España. Experiencia en Kotlin, SwiftUI, Next.js, Laravel y Django. Proyectos en producción en 4+ países, incluyendo apps para eventos deportivos internacionales.",
   keywords: [
     "Yeffer Sime",
     "desarrollador mobile",
-    "full stack developer",
+    "desarrollador full stack",
+    "desarrollador full stack remoto",
+    "contratar desarrollador remoto Latinoamérica",
+    "desarrollador Android freelance",
+    "programador Kotlin Perú",
+    "desarrollador Kotlin remoto",
+    "freelance developer Latinoamérica",
+    "desarrollador web freelance",
     "Kotlin",
     "SwiftUI",
     "Jetpack Compose",
@@ -26,33 +35,70 @@ export const metadata: Metadata = {
     "Laravel",
     "Django",
     "Firebase",
-    "portafolio",
-    "software engineer",
+    "portafolio desarrollador",
+    "software engineer Perú",
   ],
-  authors: [{ name: "Yeffer Sime H." }],
+  authors: [{ name: "Yeffer Sime H.", url: SITE_URL }],
   creator: "Yeffer Sime H.",
   robots: {
     index: true,
     follow: true,
     googleBot: { index: true, follow: true },
   },
-  metadataBase: new URL("https://yeffer-sime.vercel.app"),
+  metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: SITE_URL,
+  },
   openGraph: {
     type: "website",
     locale: "es_PE",
-    title: "Yeffer Sime H. | Mobile & Full Stack Developer",
+    alternateLocale: ["es_ES", "es_MX", "es_CO", "es_AR"],
+    title: "Yeffer Sime H. | Desarrollador Mobile & Full Stack (Remoto LatAm/España)",
     description:
-      "Desarrollador Mobile y Full Stack con experiencia en Kotlin, SwiftUI, Next.js y Laravel. Proyectos en producción en 4+ países.",
+      "Desarrollador Mobile y Full Stack disponible remoto para Latinoamérica y España. Experiencia en Kotlin, SwiftUI, Next.js y Laravel. Proyectos en producción en 4+ países.",
     siteName: "Yeffer Sime H. — Portafolio",
     // Replace with a 1200×630 banner image when available:
     images: [{ url: "/image/profile2.png", width: 400, height: 400, alt: "Yeffer Sime H." }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Yeffer Sime H. | Mobile & Full Stack Developer",
+    title: "Yeffer Sime H. | Desarrollador Mobile & Full Stack (Remoto LatAm/España)",
     description:
-      "Desarrollador Mobile y Full Stack con experiencia en Kotlin, SwiftUI, Next.js y Laravel.",
+      "Desarrollador Mobile y Full Stack disponible remoto para Latinoamérica y España. Experiencia en Kotlin, SwiftUI, Next.js y Laravel.",
     images: ["/image/profile2.png"],
+  },
+  other: {
+    "geo.region": "PE",
+    "geo.placename": "Perú",
+  },
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Yeffer Sime H.",
+  url: SITE_URL,
+  jobTitle: "Mobile & Full Stack Developer",
+  description:
+    "Desarrollador Mobile y Full Stack peruano, disponible remoto para Latinoamérica y España.",
+  nationality: "Peruana",
+  knowsAbout: [
+    "Kotlin",
+    "Jetpack Compose",
+    "SwiftUI",
+    "Next.js",
+    "TypeScript",
+    "Laravel",
+    "Django",
+    "Firebase",
+  ],
+  sameAs: [
+    "https://github.com/YefferSime",
+    "https://www.linkedin.com/in/yeffersimehuarancca/",
+  ],
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: "TECSUP",
   },
 };
 
@@ -67,6 +113,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+      </head>
       <body className={outfit.variable}>{children}</body>
     </html>
   );
