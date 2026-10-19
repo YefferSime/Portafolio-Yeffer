@@ -13,6 +13,8 @@ export type Project = {
   title: string;
   /** Ruta al logo de marca (ej. `/image/webs/{id}/{id}Logo.webp`). Si no existe, la card usa una captura de pantalla como fallback. */
   logo?: string;
+  /** Reemplaza la etiqueta de plataforma calculada (ej. "App web"). */
+  platformLabel?: string;
   description: string;
   bullets: string[];
   technologies: string[];
@@ -139,4 +141,28 @@ export const projects: Project[] = [
     { label: "Sitio Web", url: "https://barbersupermario.com" },
   ],
 },
+  {
+    id: "controlape",
+    title: "ControlaPe (Demo)",
+    logo: "/image/webs/controlape/controlapeLogo.webp",
+    platformLabel: "App web",
+    description:
+      "SaaS multi-tenant para barberías con punto de venta, comisiones automáticas por barbero, liquidaciones de planilla y panel de super-admin de plataforma. Actualmente en fase demo.",
+    bullets: [
+      "Diseñé una API REST multi-tenant con Express 5, TypeScript y Prisma sobre MySQL, con aislamiento de datos por negocio y autenticación JWT con alcances separados para negocio y plataforma.",
+      "Implementé el motor de comisiones que se resuelve y congela por línea de venta (porcentaje manual, por servicio o base del barbero), con tickets secuenciales por negocio y anulaciones controladas.",
+      "Desarrollé liquidaciones de planilla con descuento de adelantos pendientes, reportes por día, semana y mes en zona horaria de Lima, y un job de avisos de vencimiento de suscripción.",
+      "Construí el frontend en Next.js 16 y React 19 con Zustand y un sistema de diseño neumórfico propio sobre Tailwind v4, con POS, dashboard, administración y roles de barbero, admin y dueño.",
+      "Documenté la API con OpenAPI/Swagger generado desde esquemas Zod, y preparé el despliegue en Railway (backend + MySQL) y Vercel (frontend).",
+    ],
+    technologies: ["Next.js", "React 19", "TypeScript", "Express", "Prisma", "MySQL", "Zustand", "Tailwind", "Zod", "JWT", "Railway", "Vercel"],
+    images: [
+      { src: "/image/webs/controlape/web_laptop_controlape.webp", label: "Web laptop" },
+      { src: "/image/webs/controlape/web_tablet_controlape.webp", label: "Web tablet" },
+      { src: "/image/webs/controlape/web_phone_controlape.webp", label: "Web móvil" },
+    ],
+    links: [
+      { label: "App Web (Demo)", url: "https://controla-pe-frontend.vercel.app/" },
+    ],
+  },
 ];

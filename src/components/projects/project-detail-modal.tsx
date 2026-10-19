@@ -15,7 +15,7 @@ type Props = {
 };
 
 export default function ProjectDetailModal({ project, onClose }: Props) {
-  const platform = getPlatformInfo(project.images);
+  const platform = getPlatformInfo(project.images, project.platformLabel);
 
   useEffect(() => {
     const container = document.querySelector(".center-scroll") as HTMLElement | null;

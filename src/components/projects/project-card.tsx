@@ -17,7 +17,7 @@ type Props = {
 };
 
 export default function ProjectCard({ project, onOpenDetails }: Props) {
-  const platform = getPlatformInfo(project.images);
+  const platform = getPlatformInfo(project.images, project.platformLabel);
   const [thumb, setThumb] = useState(() => getCardThumbnail(project));
   const isNativeApp = platform.icons.includes("android") || platform.icons.includes("ios");
 

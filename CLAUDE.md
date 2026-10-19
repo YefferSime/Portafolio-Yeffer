@@ -26,7 +26,9 @@ The entire site is a single page rendered by `PortfolioShell` (`src/components/l
 - A single scrollable `<section className="center-scroll">` holds `TopNavbar` (`sticky top-0`) followed by all sections in a `max-w-5xl` column. Snap-scroll (`lg:snap-y lg:snap-proximity`) only applies at `lg` breakpoints.
 - **Mobile:** `RightNavbar` is additionally rendered fixed to the bottom of the viewport (`mobile` prop) as a bottom tab bar; `TopNavbar`'s own nav links/socials are hidden below `md`.
 
-Both `TopNavbar` and `RightNavbar` scroll to a section by querying `.center-scroll` and either calling `container.scrollTo()` (desktop, `>= 1024px`) or `target.scrollIntoView()` (mobile) — see the shared `handleScroll`/`scrollTo` logic in each file. Both also call the `useActiveSection` hook (`src/hooks/useActiveSection.ts`) with the same list of section ids to highlight the current section via `IntersectionObserver`; keep the `items`/`navLinks` arrays in the two files in sync.
+Both `TopNavbar` and `RightNavbar` scroll to a section by querying `.center-scroll` and either calling `container.scrollTo()` (desktop, `>= 1024px`) or `target.scrollIntoView()` (mobile) — see the shared `handleScroll`/`scrollTo` logic in each file. Both also call the `useActiveSection` hook (`src/hooks/useActiveSection.ts`) with the same list of section ids to highlight the current section via `IntersectionObserver`; keep the `items` (right-navbar) and `navLinks` (top-navbar) arrays in the two files in sync.
+
+Other layout pieces: `ParticlesBg` (tsparticles background), `ProfileSidebar`, and `ProjectDetailModal` (opened from `ProjectCard`).
 
 ## Sections
 
@@ -68,3 +70,7 @@ active:scale-95 active:translate-y-0 active:shadow-[inset_0_2px_6px_rgba(0,0,0,0
 - The `useInView` hook (`src/hooks/useInView.ts`) returns a `ref`/`inView` pair (scoped to `.center-scroll` via `IntersectionObserver`) for scroll-triggered entrance animations.
 - Static assets (CV PDF, images) are served from `public/`.
 - The path alias `@/` maps to `src/`.
+- SEO lives in `src/app/layout.tsx` (`metadata`, JSON-LD, `SITE_URL` hardcoded to `https://yeffer-sime.vercel.app`), `robots.ts` and `sitemap.ts`. Update `SITE_URL` if the domain changes.
+- The CV PDF is at `public/cv/YEFFER_SIME_CV.pdf`.
+- `AGENTS.md` overlaps heavily with this file and says to keep the two in sync; update both when changing shared guidance.
+- UI copy is in Spanish.

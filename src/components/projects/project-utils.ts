@@ -7,7 +7,7 @@ export type PlatformInfo = {
   icons: PlatformIconKind[];
 };
 
-export function getPlatformInfo(images: ProjectImageItem[]): PlatformInfo {
+export function getPlatformInfo(images: ProjectImageItem[], labelOverride?: string): PlatformInfo {
   const hasAndroid = images.some((i) => i.label === "Android");
   const hasIOS = images.some((i) => i.label === "iOS");
   const hasWeb = images.some((i) => i.label.startsWith("Web"));
@@ -24,7 +24,7 @@ export function getPlatformInfo(images: ProjectImageItem[]): PlatformInfo {
   else if (hasIOS) label = "iOS";
   else label = "Sitio web";
 
-  return { label, icons };
+  return { label: labelOverride ?? label, icons };
 }
 
 /** Ancho relativo de cada tipo de mockup, para que laptop/tablet/mobile guarden proporción entre sí. */
