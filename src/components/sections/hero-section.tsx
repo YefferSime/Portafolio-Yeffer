@@ -7,11 +7,11 @@ import { useInView } from "@/hooks/useInView";
 import HeroProfileCard from "./hero-profile-card";
 
 const ACCENT = "#b1242f";
-const TECHS = ["Kotlin", "SwiftUI", "MVVM", "Next.js", "TypeScript", "Laravel", "Django", "Firebase", "PostgreSQL", "Git"];
+const TECHS = ["React Native", "Expo", "TypeScript", "React", "Redux Toolkit", "Zustand", "Kotlin", "Swift", "Firebase", "Next.js", "Jest", "Git"];
 
 const TypewriterH1 = memo(function TypewriterH1() {
   const text = useTypewriter(
-    ["Software Developer", "Mobile Engineer", "Problem Solver"],
+    ["React Native Developer", "Mobile Engineer", "Problem Solver"],
     80,
     1500
   );
@@ -42,10 +42,10 @@ export default function HeroSection() {
 
         <div className="max-w-2xl space-y-4" style={{ transitionDelay: "80ms" }}>
           <p className="text-lg text-zinc-300 font-light leading-relaxed">
-            De un pueblo con acceso limitado a la tecnología, a desarrollar software crítico para competencias internacionales.
+            Mobile Developer enfocado en React Native, con apps en producción en Google Play Store y Apple App Store usadas en eventos deportivos nacionales e internacionales.
           </p>
           <p className="text-sm leading-7 text-zinc-500 font-light max-w-xl">
-            Mi fuerte es la resiliencia: he mantenido la calma en eventos masivos cuando los sensores fallan y he aprendido tecnologías desde cero en una sola noche para salvar un proyecto. No solo entrego código; entrego soluciones que funcionan cuando el tiempo y la presión no perdonan.
+            Desarrollo con React y TypeScript, y mi base nativa en Kotlin y Swift me permite entender el bridge de React Native, trabajar con módulos nativos y resolver las diferencias entre Android e iOS. He mantenido apps estables en eventos en vivo donde el tiempo y la presión no perdonan.
           </p>
         </div>
 

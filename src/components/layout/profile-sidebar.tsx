@@ -20,7 +20,7 @@ export default function ProfileSidebar() {
             </div>
 
             <div className="space-y-2 text-center">
-                <p className="text-sm text-zinc-400">Diseño y Desarrollo de Software</p>
+                <p className="text-sm text-zinc-400">React Native Developer</p>
                 <h2 className="text-2xl font-semibold text-white">Yeffer Sime H.</h2>
                 <p className="text-base text-zinc-200">yeffer.sime@gmail.com</p>
                 <p className="text-sm text-zinc-400 font-extralight">Lima, Perú</p>

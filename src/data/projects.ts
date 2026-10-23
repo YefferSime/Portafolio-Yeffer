@@ -24,6 +24,29 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: "peruaquatics",
+    title: "Peruaquatics",
+    logo: "/image/apps/peruaquatics/peruaquaticsLogo.webp",
+    description:
+      "App en React Native para la Federación Deportiva Nacional de Natación (FDPN), orientada a la gestión de eventos, atletas e inscripciones y a la visualización de resultados, adaptada a los requerimientos del cliente.",
+    bullets: [
+      "Desarrollé la app con React Native y TypeScript, publicada en Google Play Store para la federación nacional.",
+      "Implementé la gestión de eventos, atletas e inscripciones, con visualización de resultados y marcas personales de cada nadador.",
+      "Construí un módulo de consulta de datos históricos y récords nacionales, asegurando la integridad de la información federativa.",
+      "Integré APIs REST y Firebase, con navegación (React Navigation) y manejo de estado pensados para flujos de inscripción masiva de clubes y nadadores.",
+      "Desarrollé la versión web responsive con Next.js y Tailwind CSS para la visualización de resultados.",
+    ],
+    technologies: ["React Native", "TypeScript", "React Navigation", "REST API", "Firebase", "Next.js", "Tailwind"],
+    images: [
+      { src: "/image/apps/peruaquatics/app_peruaquatics_1.webp", label: "Android" },
+      { src: "/image/apps/peruaquatics/app_peruaquatics_2.webp", label: "Android" },
+    ],
+    links: [
+      { label: "Play Store (Standby)", url: "https://play.google.com/store/apps/details?id=com.peruaquatics" },
+      { label: "Web (Standby)", url: "https://peruaquatics.com/" },
+    ],
+  },
+  {
     id: "finisherdata",
     title: "Finisher Data",
     logo: "/image/apps/finisherdata/finisherdataLogo.webp",
@@ -52,18 +75,20 @@ export const projects: Project[] = [
   },
   {
     id: "exotimer",
-    title: "Exotimer",
+    title: "FinisherData TIMING (antes Exotimer)",
     logo: "/image/apps/exotimer/exotimerLogo.webp",
     description:
-      "Sistema crítico de cronometraje profesional con validación en eventos internacionales de élite, diseñado para máxima fiabilidad en condiciones extremas.",
+      "App de cronometraje deportivo para Android e iOS, usada en eventos nacionales e internacionales de natación, running, maratones, ciclismo y motociclismo. Integrada con FinisherData para el registro de tiempos en tiempo real.",
     bullets: [
       "Desarrollado con arquitectura MVVM y estados reactivos, garantizando la precisión de tiempos críticos sin bloqueos en la interfaz.",
       "Software validado en competencias internacionales como los Panamericanos Lima 2025, Andes Race y el Panamericano de Surf 2025.",
       "Arquitectura 'Offline-first' con Room Database, asegurando la integridad de los tiempos en zonas sin cobertura (probado en Argentina, Ecuador y Brasil).",
       "Desarrollé un sistema de captura de ráfaga que permite el registro manual de múltiples atletas simultáneos con precisión de milisegundos.",
       "Sincronización asíncrona inteligente que asegura la transferencia de datos al servidor central una vez recuperada la conectividad.",
+      "Desarrollé la versión iOS con SwiftUI, MVVM y Clean Architecture: capa de red con URLSession y async/await, autenticación con JWT, Keychain, Firebase, Sign in with Apple y Google Sign-In, y persistencia local con SwiftData.",
+      "Implementé resultados en tiempo real con WebSocket, captura de lecturas de equipos de cronometraje y exportación/importación de datos en CSV y PDF.",
     ],
-    technologies: ["Kotlin", "Jetpack Compose", "MVVM", "Room Database", "QR Scanner", "SQLite"],
+    technologies: ["Kotlin", "Jetpack Compose", "SwiftUI", "SwiftData", "MVVM", "Clean Architecture", "Room Database", "WebSocket", "JWT"],
     images: [
       { src: "/image/apps/exotimer/app_exotimer_1.webp", label: "Android" },
       { src: "/image/apps/exotimer/app_exotimer_2.webp", label: "Android" },
@@ -72,29 +97,7 @@ export const projects: Project[] = [
     ],
     links: [
       { label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.exotimer" },
-    ],
-  },
-  {
-    id: "peruaquatics",
-    title: "Peruaquatics",
-    logo: "/image/apps/peruaquatics/peruaquaticsLogo.webp",
-    description:
-      "Aplicación oficial de la Federación Deportiva Nacional de Natación (FDPN) para la gestión de atletas federados, récords y resultados de competiciones.",
-    bullets: [
-      "Estructuré la aplicación móvil siguiendo el patrón MVVM para una gestión eficiente de los estados de competencia y perfiles de atletas.",
-      "Desarrollé la aplicación móvil oficial permitiendo a los atletas acceder a sus marcas personales y récords nacionales de forma centralizada.",
-      "Implementé un módulo especializado para la consulta de datos históricos, asegurando la integridad de la información federativa.",
-      "Desarrollé la versión web responsive utilizando Next.js y Tailwind CSS, optimizando la visualización de resultados en tiempo real.",
-      "Diseñé el flujo de inscripciones masivas para competencias nacionales, facilitando el registro de clubes y nadadores a nivel nacional.",
-    ],
-    technologies: ["Next.js", "TypeScript", "MVVM", "Tailwind", "Kotlin", "Jetpack Compose", "Firebase"],
-    images: [
-      { src: "/image/apps/peruaquatics/app_peruaquatics_1.webp", label: "Android" },
-      { src: "/image/apps/peruaquatics/app_peruaquatics_2.webp", label: "Android" },
-    ],
-    links: [
-      { label: "Play Store (Standby)", url: "https://play.google.com/store/apps/details?id=com.peruaquatics" },
-      { label: "Web (Standby)", url: "https://peruaquatics.com/" },
+      { label: "App Store", url: "https://apps.apple.com/ec/app/finisherdatatiming/id6806368634" },
     ],
   },
   {
@@ -153,9 +156,10 @@ export const projects: Project[] = [
       "Implementé el motor de comisiones que se resuelve y congela por línea de venta (porcentaje manual, por servicio o base del barbero), con tickets secuenciales por negocio y anulaciones controladas.",
       "Desarrollé liquidaciones de planilla con descuento de adelantos pendientes, reportes por día, semana y mes en zona horaria de Lima, y un job de avisos de vencimiento de suscripción.",
       "Construí el frontend en Next.js 16 y React 19 con Zustand y un sistema de diseño neumórfico propio sobre Tailwind v4, con POS, dashboard, administración y roles de barbero, admin y dueño.",
+      "Escribí cerca de 70 pruebas unitarias con Vitest sobre las reglas de negocio críticas (comisiones, caja y liquidaciones).",
       "Documenté la API con OpenAPI/Swagger generado desde esquemas Zod, y preparé el despliegue en Railway (backend + MySQL) y Vercel (frontend).",
     ],
-    technologies: ["Next.js", "React 19", "TypeScript", "Express", "Prisma", "MySQL", "Zustand", "Tailwind", "Zod", "JWT", "Railway", "Vercel"],
+    technologies: ["Next.js", "React 19", "TypeScript", "Express", "Prisma", "MySQL", "Zustand", "Vitest", "Tailwind", "Zod", "JWT", "Railway", "Vercel"],
     images: [
       { src: "/image/webs/controlape/web_laptop_controlape.webp", label: "Web laptop" },
       { src: "/image/webs/controlape/web_tablet_controlape.webp", label: "Web tablet" },

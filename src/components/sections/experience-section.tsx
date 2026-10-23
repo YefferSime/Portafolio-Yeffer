@@ -9,23 +9,23 @@ export default function ExperienceSection() {
     {
       company: "RACE LINE E.I.R.L",
       role: "Mobile Developer",
-      period: "2025 — 2026",
-      summary: "Liderazgo técnico en apps para eventos internacionales y soporte en Panamericanos 2025.",
-      tags: ["Kotlin", "SwiftUI", "WebSockets", "Room DB", "Firebase"]
+      period: "Ene 2025 — Sep 2026",
+      summary: "Desarrollé Peruaquatics con React Native (Google Play) para la Federación Deportiva Nacional, y FinisherData TIMING en iOS con SwiftUI, MVVM y Clean Architecture, con JWT, Firebase, Sign in with Apple, WebSocket y SwiftData. Participé en FinisherData y Exotimer en Android (Kotlin, Jetpack Compose) y di soporte en producción en eventos como el Panamericano de Surf 2025.",
+      tags: ["React Native", "TypeScript", "SwiftUI", "Kotlin", "Jetpack Compose", "WebSocket", "Firebase", "JWT"]
     },
     {
       company: "Devdatep Consulting",
-      role: "Backend Laravel",
-      period: "2024",
-      summary: "Arquitectura de APIs seguras y optimización de flujos de datos de alta concurrencia.",
+      role: "Backend Developer Junior",
+      period: "Jul 2024 — Nov 2024",
+      summary: "Backend de un sistema de gestión de tickets con Laravel y MySQL: APIs REST para usuarios, eventos y categorías, autenticación con Sanctum y optimización de consultas.",
       tags: ["Laravel", "PHP", "Sanctum", "MySQL", "API REST"]
     },
     {
       company: "MBR Technology SAC",
-      role: "Full Stack Developer",
-      period: "2024",
-      summary: "Modernización de ERP, reduciendo tiempos de procesamiento en un 25% con Django y React.",
-      tags: ["React", "Django", "PostgreSQL", "Tailwind", "Figma"]
+      role: "Analista Programador",
+      period: "Ene 2024 — Mar 2024",
+      summary: "Desarrollo de un ERP con React, Django REST Framework y Firebase, levantamiento de requerimientos con clientes y reducción de los tiempos de procesamiento de datos.",
+      tags: ["React", "Django REST", "Firebase", "Tailwind"]
     }
   ];
 

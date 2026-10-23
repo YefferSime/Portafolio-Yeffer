@@ -59,7 +59,7 @@ export default function HeroProfileCard() {
 
       <div className="px-2 pt-4">
         <h3 className="text-lg font-semibold text-white">Yeffer Sime H.</h3>
-        <p className="text-sm text-zinc-400">Mobile &amp; Full Stack Developer</p>
+        <p className="text-sm text-zinc-400">React Native &amp; Mobile Developer</p>
       </div>
 
       <div className="mt-4 flex items-center gap-3 px-2">

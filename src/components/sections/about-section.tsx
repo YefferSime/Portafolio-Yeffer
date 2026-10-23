@@ -6,9 +6,9 @@ export default function AboutSection() {
   const { ref, inView } = useInView();
 
   const skills = [
-    "Kotlin", "SwiftUI", "Laravel", "Django",
-    "React", "Next.js", "TypeScript", "Jetpack Compose",
-    "Room DB", "Firebase", "Figma", "Git"
+    "React Native", "Expo", "TypeScript", "React",
+    "Redux Toolkit", "Zustand", "React Navigation", "Next.js",
+    "Kotlin", "Swift", "Firebase", "Jest / Vitest", "Node.js", "Git"
   ];
 
   const pillars = [
@@ -54,8 +54,18 @@ export default function AboutSection() {
           <div className="md:col-span-5 flex flex-col gap-6">
             <div className="liquid-glass p-6 border border-white/5">
               <p className="text-[9px] uppercase tracking-widest text-rose-200/40 font-bold">Formación</p>
-              <h4 className="mt-2 font-medium text-white text-sm">Diseño y Desarrollo de Software</h4>
-              <p className="text-[11px] text-zinc-500 italic mt-1">TECSUP • Becario Beca 18</p>
+              <h4 className="mt-2 font-medium text-white text-sm">Profesional Técnico en Diseño y Desarrollo de Software</h4>
+              <p className="text-[11px] text-zinc-500 italic mt-1">TECSUP • Becario Beca 18 • Titulado 2026</p>
+            </div>
+
+            <div className="liquid-glass p-6 border border-white/5">
+              <p className="text-[9px] uppercase tracking-widest text-rose-200/40 font-bold">Certificaciones</p>
+              <ul className="mt-2 space-y-1 text-[11px] text-zinc-400">
+                <li>React Native Expo: Apps nativas iOS y Android — Udemy (2026)</li>
+                <li>Jetpack Compose — Udemy (2026)</li>
+                <li>Claude 101 y Claude Code 101 — Anthropic (2026)</li>
+                <li>Fundamentos de Ciberseguridad — Cisco / TECSUP (2024)</li>
+              </ul>
             </div>
 
             <div className="liquid-glass p-8 border border-white/5 h-auto">
